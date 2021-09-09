@@ -1,0 +1,65 @@
+<div class="col-md-6" offset-md-3>
+
+    <h3>Create Employee</h3>
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+
+        <div class="form-group">
+            <label> Developer ATT ID</label>
+            <input type="text" class="form-control" id="developer" [(ngModel)]="employee.developer" name="developer" required #developer="ngModel" pattern="[a-z,0-9]{2,6}">
+            <span *ngIf="f.submitted && developer.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && developer.errors?.pattern">Invalid data</span>
+        </div>
+        <div class=" form-group">
+            <label> Release </label>
+            <input type="text" class="form-control" id="release" [(ngModel)]="employee.release" name="release" required #release="ngModel" pattern="[R,0-9]{1,5}">
+            <span *ngIf="f.submitted && release.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && release.errors?.pattern">Invalid data</span>
+        </div>
+        <div class="form-group">
+
+            <label>Track Name</label>
+            <input list="project-plan" type="text" class="form-control" id="track" [(ngModel)]="employee.track" name="track">
+            <datalist id="project-plan">
+                <option>Replication</option>
+                <option>Galaxy</option>
+                <option>Milky Bar</option>
+
+            </datalist>
+
+
+        </div>
+        <div class="form-group">
+            <label> DS/DEF </label>
+            <input type="text" class="form-control" id="dsdef" [(ngModel)]="employee.dsdef" name="dsdef" required #dsdef="ngModel" pattern="[0-9]{1,10}">
+            <span *ngIf="f.submitted && dsdef.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && dsdef.errors?.pattern">Invalid data</span>
+
+        </div>
+        <div class="form-group">
+            <label> US/DEF </label>
+            <input type="text" class="form-control" id="usdef" [(ngModel)]="employee.usdef" name="usdef" required #usdef="ngModel" pattern="[0-9]{1,10}">
+
+            <span *ngIf="f.submitted && usdef.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && usdef.errors?.pattern">Invalid Data</span>
+        </div>
+        <div class="form-group">
+            <label>Unit Test Case Doc </label>
+            <input type="text" class="form-control" id="unittest" [(ngModel)]="employee.unittest" name="unittest" required #unittest="ngModel" pattern="[a-z]{2,8}">
+            <span *ngIf="f.submitted && unittest.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && unittest.errors?.pattern">Invalid Data</span>
+        </div>
+
+        <div class="form-group">
+            <label> PR Comments </label>
+            <input type="text" class="form-control" id="prcomments" [(ngModel)]="employee.prcomments" name="prcomments" required #prcomments="ngModel" pattern="[a-z]{2,8}">
+            <span *ngIf="f.submitted && prcomments.errors?.required" class="text-success">Please enter your data</span>
+            <span *ngIf="f.submitted && prcomments.errors?.pattern">Invalid Data</span>
+        </div>
+
+        <br>
+        <button class="btn btn-success" type="submit">Submit
+
+        </button>
+
+    </form>
+</div>-

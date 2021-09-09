@@ -1,0 +1,28 @@
+<h2>employee-list works!</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>DeveloperAttID</th>
+            <th>Release</th>
+            <th>TrackName</th>
+            <th>DSDEF</th>
+            <th>USDEF</th>
+            <th>Unit Test Case Doc</th>
+            <th>PR Commnets</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.developer}}</td>
+            <td>{{employee.release}}</td>
+            <td>{{employee.track}}</td>
+            <td>{{employee.dsdef}}</td>
+            <td>{{employee.usdef}}</td>
+            <td>{{employee.unittest}}</td>
+            <td>{{employee.prcomments}}</td>
+
+
+        </tr>
+    </tbody>
+</table>
